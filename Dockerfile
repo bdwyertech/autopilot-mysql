@@ -42,12 +42,12 @@ RUN set -ex \
     && rm /docker-entrypoint.sh
 
 
-ENV CONTAINERPILOT_VER 3.1.1
+ENV CONTAINERPILOT_VER 3.6.2
 ENV CONTAINERPILOT /etc/containerpilot.json5
 
 # Add ContainerPilot
 RUN set -ex \
-    && export CONTAINERPILOT_CHECKSUM=1f159207c7dc2b622f693754f6dda77c82a88263 \
+    && export CONTAINERPILOT_CHECKSUM=b799efda15b26d3bbf8fd745143a9f4c4df74da9 \
     && curl -Lsfo /tmp/containerpilot.tar.gz "https://github.com/joyent/containerpilot/releases/download/${CONTAINERPILOT_VER}/containerpilot-${CONTAINERPILOT_VER}.tar.gz" \
     && echo "${CONTAINERPILOT_CHECKSUM}  /tmp/containerpilot.tar.gz" | sha1sum -c \
     && tar zxf /tmp/containerpilot.tar.gz -C /usr/local/bin \
